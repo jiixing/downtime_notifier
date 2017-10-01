@@ -22,7 +22,10 @@ update-stack:
 	  --template-body file://cloudformation/template.yaml \
 	  --parameters file://cloudformation/parameters.json \
 	  --capabilities CAPABILITY_IAM
-
+	  
+describe-stack:
+	aws cloudformation describe-stacks \
+	  --stack-name $(STACK_NAME)
 invoke:
 	STUB=true python index.py
 
